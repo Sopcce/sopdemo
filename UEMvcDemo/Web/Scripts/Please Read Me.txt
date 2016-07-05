@@ -1,0 +1,31 @@
+Name                      使用js插件介绍             	 
+----------------------------
+AmazeUI-2.5.0	          http://amazeui.org/					 
+bootstrap-3.3.5           http://www.bootcss.com/ 		 
+ueditor1_4_3_2-utf8-net   http://ueditor.baidu.com/website/index.html  
+                          UEditor 开发文档文档
+                          UEditor富文本编辑器，轻量，可定制，注重用户体验。
+                          doc：http://fex.baidu.com/ueditor/#start-start
+                          api:http://ueditor.baidu.com/doc/
+                          本文档处理ueditor1_4_3_2-utf8-net版本，部分文档请参考api\doc
+jq
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                             
