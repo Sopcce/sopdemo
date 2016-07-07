@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UE使用MVC 中的HtmlHelper输出编辑器 </title>
+</head>
+<body>
+    <div> 
+        <script src="~/Scripts/UEditor/ueditor.config.js"></script>
+        <script src="~/Scripts/UEditor/ueditor.all.min.js"></script>
+        <script src="~/Scripts/UEditor/lang/zh-cn/zh-cn.js"></script>
+        <script src="~/Scripts/JQuery/jquery-1.9.0.min.js"></script>
+        <script src="~/Scripts/UEditor/sop.ajax.ueditor.js"></script>
+
+        @Html.UEditor("myeditor");
+       
+        <input type="submit" id="btn" />
+    </div>
+</body>
+</html>
