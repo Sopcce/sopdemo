@@ -15,16 +15,15 @@ $(function () {
     //    ue = UE.getEditor(id);
     //});
 
-   // alert("asd #31");
-    //$("#btn").click(function () {
-    //    var content = editor.getContent();
-    //    editor.sync();//异步提交
-    //    $.post("/Home/Post", { action: "post", editorValue: content },
-	//			function (data) {
-	//			    alert(data);
-	//			});
-
-    //});
+    var editor = UE.getEditor('myeditor');
+    $("#btn").click(function () {
+        var content = editor.getContent();
+        editor.sync();//异步提交
+        $.post("/Home/Post", { action: "post", editorValue: content },
+				function (data) {
+				    alert(data);
+				});
+    });
   
     
    

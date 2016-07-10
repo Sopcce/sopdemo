@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="~/Scripts/JQuery/jquery.livequery.min.js"></script>
+    <script src="~/Scripts/UEditor/ueditor.config.js"></script>
+    <script src="~/Scripts/UEditor/ueditor.all.min.js"></script>
+    <script src="~/Scripts/UEditor/lang/zh-cn/zh-cn.js"></script>
+    
+    <script type="text/javascript">
+    $(function(){
+        $("textarea[plugin='ueditor']").livequery(function () {
+            var id = $(this).attr("id");
+            ue = UE.getEditor(id);
+        });
+});
+    </script>
+</head>
+<body>
+    <textarea id="myeditor" plugin="ueditor"></textarea>
+    
+</body>
+</html>
