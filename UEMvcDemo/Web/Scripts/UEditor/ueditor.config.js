@@ -41,7 +41,7 @@
             'directionalityltr', 'directionalityrtl', 'indent', '|',
             'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
             'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-            'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
+            'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map',/*'gmap',*/  'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
             'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
             'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
             'print', 'preview', 'searchreplace', 'help', 'drafts'
@@ -64,7 +64,7 @@
         //,zIndex : 900     //编辑器层级的基数,默认是900
 
         //针对getAllHtml方法，会在对应的head标签中增加该编码设置。
-        //,charset:"utf-8"
+        ,charset:"utf-8"
 
         //若实例化编辑器的页面手动修改的domain，此处需要设置为true
         //,customDomain:false
@@ -72,7 +72,8 @@
         //常用配置项目
         //,isShow : true    //默认显示编辑器
 
-        //,textarea:'editorValue' // 提交表单时，服务器获取编辑器提交内容的所用的参数，多实例时可以给容器name属性，会将name给定的值最为每个实例的键值，不用每次实例化的时候都设置这个值
+        //,textarea:'editorValue' // 提交表单时，服务器获取编辑器提交内容的所用的参数，多实例时可以给容器name属性，
+        //会将name给定的值最为每个实例的键值，不用每次实例化的时候都设置这个值
 
         //,initialContent:'欢迎使用ueditor!'    //初始化编辑器的内容,也可以通过textarea/script给值，看官网例子
 
@@ -89,7 +90,7 @@
         //首行缩进距离,默认是2em
         //,indentValue:'2em'
 
-        //,initialFrameWidth:1000  //初始化编辑器宽度,默认1000
+       // ,initialFrameWidth:900  //初始化编辑器宽度,默认1000
         //,initialFrameHeight:320  //初始化编辑器高度,默认320
 
         //,readonly : false //编辑器初始化结束后,编辑区域是否是只读的，默认是false
@@ -106,7 +107,7 @@
         //,imagePopup:true      //图片操作的浮层开关，默认打开
 
         //,autoSyncData:true //自动同步编辑器要提交的数据
-        //,emotionLocalization:false //是否开启表情本地化，默认关闭。若要开启请确保emotion文件夹下包含官网提供的images表情文件夹
+        ,emotionLocalization:true //是否开启表情本地化，默认关闭。若要开启请确保emotion文件夹下包含官网提供的images表情文件夹
 
         //粘贴只保留标签，去除标签所有属性
         //,retainOnlyLabelPasted: false
@@ -277,19 +278,19 @@
 
         //autoHeightEnabled
         // 是否自动长高,默认true
-        //,autoHeightEnabled:true
+        , autoHeightEnabled: false
 
         //scaleEnabled
         //是否可以拉伸长高,默认true(当开启时，自动长高失效)
-        //,scaleEnabled:false
-        //,minFrameWidth:800    //编辑器拖动时最小宽度,默认800
-        //,minFrameHeight:220  //编辑器拖动时最小高度,默认220
+        , scaleEnabled: false
+        //,minFrameWidth:900    //编辑器拖动时最小宽度,默认800
+        //,minFrameHeight:620  //编辑器拖动时最小高度,默认220
 
         //autoFloatEnabled
         //是否保持toolbar的位置不动,默认true
         //,autoFloatEnabled:true
         //浮动时工具栏距离浏览器顶部的高度，用于某些具有固定头部的页面
-        //,topOffset:30
+        //,topOffset:300
         //编辑器底部距离工具栏高度(如果参数大于等于编辑器高度，则设置无效)
         //,toolbarTopOffset:400
 

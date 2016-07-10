@@ -1,4 +1,13 @@
-﻿using System;
+﻿//<http://www.sopcce.com>
+//--------------------------------------------------------------
+//<version>V0.5</verion>
+//<createdate>2016-7-8</createdate>
+//<author>郭家秋</author>
+//<email>sopcce@qq.com</email>
+//<log date="2016-7-8" version="0.5">新建</log>
+//--------------------------------------------------------------
+//<http://www.sopcce.com>
+using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Linq.Expressions;
@@ -13,7 +22,18 @@ namespace System.Web.Mvc.Html
     /// </summary>
     public static class HtmlHelperUEditorExtensions
     {
-        //string name, string value,
+        /// <summary>
+        /// 配置UEditor需要的js 
+        /// </summary>
+        public static readonly string ueditorconfig = @"
+        <script src=""/Scripts/UEditor/ueditor.config.js""></script> 
+        <script src=""/Scripts/UEditor/ueditor.all.min.js""></script> 
+        <script src=""/Scripts/UEditor/lang/zh-cn/zh-cn.js""></script>
+        <script src=""/Scripts/UEditor/ueditor.parse.min.js""></script>
+        <script src=""/Scripts/JQuery/jquery-1.9.0.min.js""></script>
+        <script type=""text/javascript""> var editor = UE.getEditor('{0}'); </script>
+        <script src=""/Scripts/UEditor/sop.ajax.ueditor.js""></script>";
+      
         /// <summary>
         /// 
         /// </summary>
@@ -25,36 +45,30 @@ namespace System.Web.Mvc.Html
         public static MvcHtmlString UEditor(this HtmlHelper htmlHelper, string name, string value = null, Dictionary<string, object> htmlAttributes = null)
         {
             if (string.IsNullOrEmpty(name))
-            {
-                throw new ArgumentException("参数名不能为空", "argsname is null");
-            }
-            
-            //htmlHelper.Script("~/Bundle/Scripts/UEditor");
-            TagBuilder builder = new TagBuilder("<div>");
+                throw new ArgumentException("参数名称不能为空", "argsname is null");
+            TagBuilder builder = new TagBuilder("div");
             Dictionary<string, object> htmlAttrs = new Dictionary<string, object>();
             if (htmlAttributes != null)
                 htmlAttrs = new Dictionary<string, object>(htmlAttributes);
             var data = new Dictionary<string, object>();
-            
             htmlAttrs.Add("data", JsonConvert.SerializeObject(data));
-            builder.InnerHtml = htmlHelper.TextArea(name, value ?? string.Empty, htmlAttrs).ToString();
-            var asd = builder.ToString();
-            return MvcHtmlString.Create(asd);
+           // htmlAttrs.Add("plugin", "ueditor");
+            builder.InnerHtml = string.Format(ueditorconfig,name) + htmlHelper.TextArea(name, value ?? string.Empty, htmlAttrs).ToString();
+            return MvcHtmlString.Create(builder.ToString());
         }
 
             
-        public static MvcHtmlString UEditorFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string tenantTypeId, long associateId = 0, Dictionary<string, object> htmlAttributes = null)
+        public static MvcHtmlString UEditorFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression,  Dictionary<string, object> htmlAttributes = null)
         {
-            TagBuilder builder = new TagBuilder("span");
+            TagBuilder builder = new TagBuilder("div");
             Dictionary<string, object> htmlAttrs = new Dictionary<string, object>();
             if (htmlAttributes != null)
                 htmlAttrs = new Dictionary<string, object>(htmlAttributes);
             var data = new Dictionary<string, object>();
-            data.Add("tenantTypeId", tenantTypeId);
-            data.Add("associateId", associateId);
             htmlAttrs.Add("data", JsonConvert.SerializeObject(data));
-            htmlAttrs.Add("plugin", "ueditor");
-            builder.InnerHtml = htmlHelper.TextAreaFor(expression, htmlAttrs).ToString();
+            //htmlAttrs.Add("plugin", "ueditor");
+            
+            builder.InnerHtml = string.Format(ueditorconfig,"") + htmlHelper.TextAreaFor(expression, htmlAttrs).ToString();
             return MvcHtmlString.Create(builder.ToString());
         }
     }

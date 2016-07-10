@@ -12,7 +12,7 @@ namespace Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.Add(new Route("SopHandler/{controller}", new Sop.HandlerHelper.UERouteHandlerHelper()));
+            routes.Add(new Route("SopHandler/{controller}", new Sop.UEditor.UERouteHandlerHelper()));
 
             routes.MapRoute(
                 name: "Default",

@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 /// <summary>
 /// 
 /// </summary>
-namespace Sop.UEditorHelper
+namespace Sop.UEditor
 {
     /// <summary>
     /// UE配置信息类

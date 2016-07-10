@@ -19,7 +19,10 @@ namespace Web.Controllers
             return View();
         }
 
-
+        public ActionResult demo()
+        {
+            return View();
+        }
 
 
         [HttpPost]

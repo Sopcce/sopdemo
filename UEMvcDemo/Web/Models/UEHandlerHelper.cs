@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Routing;
-using Sop.UEditorHelper;
 
-namespace Sop.HandlerHelper
+
+namespace Sop.UEditor
 {
     /// <summary>
     /// UERouteHandlerHelper

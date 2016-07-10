@@ -6,7 +6,7 @@ using System.Web;
 
 
 
-namespace UEditor
+namespace Sop.UEditor
 {
     /// <summary>
     /// 
