@@ -1,6 +1,6 @@
 # sopdemo
-郭家秋
-
-个人介绍
+项目库介绍
+http://www.sopcce.com
+http://www.sopcce.net
 
 1、UEMvcDemo 主要是mvc中使用百度编辑器
