@@ -622,6 +622,9 @@
     <Content Include="Scripts\UEditor\dialogs\wordimage\wordimage.html" />
     <Content Include="Scripts\UEditor\dialogs\wordimage\wordimage.js" />
     <Content Include="Scripts\UEditor\index.html" />
+    <Content Include="Scripts\UEditor\jquery-1.9.0.js" />
+    <Content Include="Scripts\UEditor\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\UEditor\jquery.livequery.min.js" />
     <Content Include="Scripts\UEditor\lang\en\en.js" />
     <Content Include="Scripts\UEditor\lang\en\images\addimage.png" />
     <Content Include="Scripts\UEditor\lang\en\images\alldeletebtnhoverskin.png" />
@@ -777,9 +780,10 @@
     <Content Include="Scripts\UEditor\third-party\video-js\font\vjs.ttf" />
     <Content Include="Scripts\UEditor\third-party\video-js\font\vjs.woff" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Index1.cshtml" />
     <Content Include="Views\web.config" />
     <Content Include="Views\Home\demo.cshtml" />
+    <Content Include="Views\Home\AjaxPost.cshtml" />
+    <Content Include="Views\Home\MvcPost.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

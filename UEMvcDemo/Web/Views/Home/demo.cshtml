@@ -1,28 +1,17 @@
-﻿
+﻿@model Sop.UEditor.UeditorAttachmentInfo
 @{
     Layout = null;
 }
 
 <html>
 <head>
-
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
-    <script src="~/Scripts/JQuery/jquery.livequery.min.js"></script>
-    <script src="~/Scripts/UEditor/ueditor.config.js"></script>
-    <script src="~/Scripts/UEditor/ueditor.all.min.js"></script>
-    <script src="~/Scripts/UEditor/lang/zh-cn/zh-cn.js"></script>
-    
-    <script type="text/javascript">
-    $(function(){
-        $("textarea[plugin='ueditor']").livequery(function () {
-            var id = $(this).attr("id");
-            ue = UE.getEditor(id);
-        });
-});
-    </script>
+    <title>UE使用MVC 中的HtmlHelper输出编辑器 </title>
 </head>
 <body>
-    <textarea id="myeditor" plugin="ueditor"></textarea>
-    
+
+    <br /><br /><br />
+    @Html.UEditor("name")
+   <br /><br /><br />
+    @Html.UEditorFor(n => n.UploadFileName)
 </body>
 </html>

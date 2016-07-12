@@ -8,97 +8,58 @@ namespace Web.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        /// <summary>
+        /// 首页
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Index1()
-        {
-            return View();
-        }
-
+        /// <summary>
+        /// 输出mvc HtmlHelper
+        /// </summary>
+        /// <returns></returns>
         public ActionResult demo()
         {
             return View();
         }
 
-
-        [HttpPost]
-        
-        public ActionResult Post(FormCollection context)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult MvcPost()
         {
-            var name = context["myeditor"];
+            return View();
+        }
+        /// <summary>
+        /// 异步提交页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult AjaxPost()
+        {
+            return View();
+        }
+     
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult AjaxPost(FormCollection context)
+        {
+            var name = context["editorValue"];
             //存入数据库或者其他操作
-            
-            return Content("");
+            return Content("提交成功，我是后端数据"+ name);
         }
 
-        // GET: Home/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
 
-        // POST: Home/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: Home/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
 
-        // POST: Home/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: Home/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: Home/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }

@@ -30,20 +30,24 @@ namespace System.Web.Mvc.Html
         <script src=""/Scripts/UEditor/ueditor.all.min.js""></script> 
         <script src=""/Scripts/UEditor/lang/zh-cn/zh-cn.js""></script>
         <script src=""/Scripts/UEditor/ueditor.parse.min.js""></script>
-        <script src=""/Scripts/JQuery/jquery-1.9.0.min.js""></script>
-        <script type=""text/javascript""> var editor = UE.getEditor('{0}'); </script>
-        <script src=""/Scripts/UEditor/sop.ajax.ueditor.js""></script>";
-      
+        <script src=""/Scripts/UEditor/jquery-1.9.0.min.js""></script>
+        <script type=""text/javascript""> var ue = UE.getEditor('{0}'); 
+        </script>
+        </script>
+        ";
+
         /// <summary>
-        /// 
+        /// 通过使用指定的 HTML 帮助器、窗体字段的名称、文本内容和指定的 
+        /// HTML 特性，返回指定的UEditor textarea标签 元素。
         /// </summary>
         /// <param name="htmlHelper">此方法扩展的 HTML 帮助器实例。</param>
-        /// <param name="name"></param>
-        /// <param name="value"></param>
-        /// <param name="htmlAttributes"></param>
-        /// <returns></returns>
+        /// <param name="name">要返回的窗体字段的名称。</param>
+        /// <param name="value"> 文本内容。</param>
+        /// <param name="htmlAttributes">一个对象，其中包含要为该元素设置的 HTML 特性。</param>
+        /// <returns>指定的UEditor textarea标签 元素。</returns>
         public static MvcHtmlString UEditor(this HtmlHelper htmlHelper, string name, string value = null, Dictionary<string, object> htmlAttributes = null)
         {
+            //初始化判断页面是否引用js
             if (string.IsNullOrEmpty(name))
                 throw new ArgumentException("参数名称不能为空", "argsname is null");
             TagBuilder builder = new TagBuilder("div");
@@ -52,12 +56,23 @@ namespace System.Web.Mvc.Html
                 htmlAttrs = new Dictionary<string, object>(htmlAttributes);
             var data = new Dictionary<string, object>();
             htmlAttrs.Add("data", JsonConvert.SerializeObject(data));
-           // htmlAttrs.Add("plugin", "ueditor");
+           // htmlAttrs.Add("plugin", "ueditor"); //用于js动态绑定实例id 这里不用这种方法
             builder.InnerHtml = string.Format(ueditorconfig,name) + htmlHelper.TextArea(name, value ?? string.Empty, htmlAttrs).ToString();
             return MvcHtmlString.Create(builder.ToString());
         }
-
-            
+        /// <summary>
+        /// 通过使用指定的 HTML 帮助器、窗体字段的名称、文本内容和指定的 
+        /// HTML 特性，返回指定的UEditor textarea标签 元素。
+        /// </summary>
+        /// <typeparam name="TModel"> 模型的类型。</typeparam>
+        /// <typeparam name="TProperty">属性的类型。</typeparam>
+        /// <param name="htmlHelper">此方法扩展的 HTML 帮助器实例。</param>
+        /// <param name="expression">  一个表达式，用于标识包含要呈现的属性的对象。</param>
+        /// <param name="htmlAttributes">一个对象，其中包含要为该元素设置的 HTML 特性。</param>
+        /// <returns>指定的UEditor textarea标签 元素。</returns>
+        /// <exception cref="T:System.ArgumentNullException:">
+        /// 异常: expression 参数为 null。
+        ///  </exception>
         public static MvcHtmlString UEditorFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression,  Dictionary<string, object> htmlAttributes = null)
         {
             TagBuilder builder = new TagBuilder("div");
@@ -66,24 +81,21 @@ namespace System.Web.Mvc.Html
                 htmlAttrs = new Dictionary<string, object>(htmlAttributes);
             var data = new Dictionary<string, object>();
             htmlAttrs.Add("data", JsonConvert.SerializeObject(data));
-            //htmlAttrs.Add("plugin", "ueditor");
+            // htmlAttrs.Add("plugin", "ueditor"); //用于js动态绑定实例id 这里不用这种方法
             var name = String.Join(".",GetMembersOnPath(expression.Body as MemberExpression)
                 .Select(m => m.Member.Name)
                 .Reverse());
-            //var name = GetFullPropertyName(expression);
-
             builder.InnerHtml = string.Format(ueditorconfig, name) + htmlHelper.TextAreaFor(expression, htmlAttrs).ToString();
-            var asda = builder.ToString();
-            return MvcHtmlString.Create(asda);
+            
+            return MvcHtmlString.Create(builder.ToString());
         }
 
         /// <summary>
-        /// 
+        /// MemberExpression
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
         /// http://stackoverflow.com/questions/2789504/get-the-property-as-a-string-from-an-expressionfunctmodel-tproperty
-        /// 
         private static IEnumerable<MemberExpression> GetMembersOnPath(MemberExpression expression)
         {
             while (expression != null)
@@ -93,61 +105,6 @@ namespace System.Web.Mvc.Html
             }
         }
 
-        #region 未使用
-        //// code adjusted to prevent horizontal overflow
-        //static string GetFullPropertyName<T, TProperty>
-        //(Expression<Func<T, TProperty>> exp)
-        //{
-        //    MemberExpression memberExp;
-        //    if (!TryFindMemberExpression(exp.Body, out memberExp))
-        //        return string.Empty;
-
-        //    var memberNames = new Stack<string>();
-        //    do
-        //    {
-        //        memberNames.Push(memberExp.Member.Name);
-        //    }
-        //    while (TryFindMemberExpression(memberExp.Expression, out memberExp));
-
-        //    return string.Join(".", memberNames.ToArray());
-        //}
-
-        //// code adjusted to prevent horizontal overflow
-        //private static bool TryFindMemberExpression
-        //(Expression exp, out MemberExpression memberExp)
-        //{
-        //    memberExp = exp as MemberExpression;
-        //    if (memberExp != null)
-        //    {
-        //        // heyo! that was easy enough
-        //        return true;
-        //    }
-
-        //    // if the compiler created an automatic conversion,
-        //    // it'll look something like...
-        //    // obj => Convert(obj.Property) [e.g., int -> object]
-        //    // OR:
-        //    // obj => ConvertChecked(obj.Property) [e.g., int -> long]
-        //    // ...which are the cases checked in IsConversion
-        //    if (IsConversion(exp) && exp is UnaryExpression)
-        //    {
-        //        memberExp = ((UnaryExpression)exp).Operand as MemberExpression;
-        //        if (memberExp != null)
-        //        {
-        //            return true;
-        //        }
-        //    }
-
-        //    return false;
-        //}
-
-        //private static bool IsConversion(Expression exp)
-        //{
-        //    return (
-        //        exp.NodeType == ExpressionType.Convert ||
-        //        exp.NodeType == ExpressionType.ConvertChecked
-        //    );
-        //} 
-        #endregion
+        
     }
 }
