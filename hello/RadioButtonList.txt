@@ -1,0 +1,9 @@
+DateTime BeginDate = DateTime.Now.Date;
+        for (int i = 0; i < 6; i++)
+        {
+            DateTime CurrDate = BeginDate.AddMonths(-i);
+            string SaveValue = CurrDate.ToString("yyyy-MM-1");
+            string EchoValue = CurrDate.ToString("yyyyÄêMMÔÂ");
+            RadioButtonList1.Items[i].Text = EchoValue;
+            RadioButtonList1.Items[i].Value = SaveValue;
+        }
