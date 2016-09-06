@@ -7,16 +7,13 @@
 //<log date="2016-7-8" version="0.5">新建</log>
 //--------------------------------------------------------------
 //<http://www.sopcce.com>
-using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
 using System.Linq.Expressions;
-using System.Web.Mvc.Html;
 using Newtonsoft.Json;
 using System.Linq;
 
 namespace System.Web.Mvc.Html
-{ 
+{
     /// <summary>
     /// UEditor的HtmlHelper输出方法
     /// </summary>
@@ -30,7 +27,6 @@ namespace System.Web.Mvc.Html
         <script src=""/Scripts/UEditor/ueditor.all.min.js""></script> 
         <script src=""/Scripts/UEditor/lang/zh-cn/zh-cn.js""></script>
         <script src=""/Scripts/UEditor/ueditor.parse.min.js""></script>
-        <script src=""/Scripts/UEditor/jquery-1.9.0.min.js""></script>
         <script type=""text/javascript""> var ue = UE.getEditor('{0}'); 
         </script>
         </script>
