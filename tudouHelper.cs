@@ -10,6 +10,7 @@ using tudouApi.Model;
 
 namespace tudouApi
 {
+	//
     public class tudouHelper
     {
         private string _appkey = "7ee7a34f14a4c74b"; //20110527 seasun owner tudou appkey
