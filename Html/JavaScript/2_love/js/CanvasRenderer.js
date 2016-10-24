@@ -7,7 +7,7 @@ THREE.SpriteCanvasMaterial = function ( parameters ) {
 	this.color = new THREE.Color( 0xffffff );
 	this.program = function ( context, color ) {};
 
-	this.setValues( parameters );
+	this.setValues( parameters ); 
 
 };
 
