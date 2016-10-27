@@ -1,7 +1,7 @@
 ES-Checker is a feature detection library for ECMAScript in node.js and browser. Please visit [demo](http://ruanyf.github.io/es-checker/).
 
 ## How to use
-
+ 
 ### Command line
 
 ```bash
