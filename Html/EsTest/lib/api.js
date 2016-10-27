@@ -7,7 +7,7 @@ var api = {
   destructuring: { passes: "'use strict'; var a = [1,2], [b,c] = a, d = {e:1,f:2}, {e:E,f} = d;" },
   parameterDestructuring: { passes: "'use strict'; function a({b,c}){}" },
   templateString: { passes: "'use strict'; var a = 1, b = `c${a}d`;" },
-  forOf: { passes: "'use strict'; for (var a of [1]) {}" },
+  forOf: { passes: "'use strict'; for (var a of [1]) {}" }, 
   arrow: { passes: "'use strict'; var a = () => {};" },
   generator: { passes: "'use strict'; function *a(){ yield; }" },
   conciseMethodProperty: { passes: "'use strict'; var a = 1, b = { c(){}, a };" },
