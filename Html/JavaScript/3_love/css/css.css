@@ -10,7 +10,7 @@
 }
 .fcc{background:url(../images/fcc.png);position:absolute;z-index:3;right:230px;width:90px;height:97px;top:0}
 
-@-webkit-keyframes load{
+@-webkit-keyframes load{ 
 	0%{
 		transform: rotate(0);
 		-ms-transform: rotate(0);		/* IE 9 */
