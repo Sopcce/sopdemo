@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+
+
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+
+
+
+/* menu */
+.menu{width:80px;height:80px;position:fixed;top:340px;left:360px;background:url(../images/menu.png) no-repeat;cursor:move;}
+/**html .menu{position:absolute;top:expression(eval(document.documentElement.scrollTop));margin-top:340px;}*/
+
+.menu .box{width:200px;height:253px;background:url(../images/m-bg.png) repeat;position:absolute;top:-88px;left:-30px;display:none;}
+.menu .box a{background:url(../images/m1.png) no-repeat;position:absolute;}
+.menu .box a:hover{background:url(../images/m2.png) no-repeat;}
+.menu .box .t1{background-position:0px 0px;width:49px;height:59px;left:34px;top:8px;}
+.menu .box .t2{background-position:0px -80px;width:49px;height:52px;left:104px;top:24px;}
+.menu .box .t3{background-position:0px -160px;width:58px;height:50px;left:134px;top:84px;}
+.menu .box .t4{background-position:0px -240px;width:54px;height:49px;left:126px;top:154px;}
+.menu .box .t5{background-position:0px -320px;width:50px;height:57px;left:74px;top:189px;}
+.menu .box .t6{background-position:0px -400px;width:50px;height:54px;left:3px;top:185px;}
+.menu .box .t1:hover{background-position:0px 0px;}
+.menu .box .t2:hover{background-position:0px -80px;}
+.menu .box .t3:hover{background-position:0px -160px;}
+.menu .box .t4:hover{background-position:0px -240px;}
+.menu .box .t5:hover{background-position:0px -320px;}
+.menu .box .t6:hover{background-position:0px -400px;}

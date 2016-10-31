@@ -1,0 +1,40 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML Strict//EN">
+
+<META http-equiv="Content-Type" content="text/html; charset=GBK"> 
+	<style>
+	.img_center{
+		height:200px;
+		width:200px;
+		background-image:url("t4.jpg");
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+</style>
+
+<script type="text/javascript">
+window.onload=function(){
+	var img = document.getElementById("c_img");
+	var div = document.getElementById("c_div");
+	var height = div.style.height;
+	var width = div.style.width;
+	img.style.marginTop = (parseInt(height,10) - img.offsetHeight) / 2 + "px";
+	img.style.marginLeft = (parseInt(width,10) - img.offsetWidth) / 2 + "px";
+}
+</script>
+<HTML>
+<HEAD>
+
+</HEAD>
+<BODY>
+css实现图片居中：
+<div style="border:1px solid windowtext;height:600px;width:600px;
+		">
+<img  class="img_center"/>
+</div>
+js实现图片居中：
+<div id="c_div" style="border:1px solid windowtext;height:600px;width:600px;">
+<img src="t4.jpg" id="c_img"/>
+</div>
+</BODY>
+</HTML>

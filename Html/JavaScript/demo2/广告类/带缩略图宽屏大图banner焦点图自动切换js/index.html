@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>模板王整理发布</title>
+<style type="text/css">
+/* CSS Document */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, img, dl, dt, dd, table, th, td, blockquote, fieldset, div, strong, label, em { margin:0; padding:0; border:0; }
+ul, ol, li { list-style:none; }
+input, button { margin:0; font-size:12px; vertical-align:middle; }
+body { font-size:12px; font-family:Arial, Helvetica, sans-serif; text-align:center; margin:0 auto; background:url(../images/bg01.gif) no-repeat center top #c0c0c0; }
+table { border-collapse:collapse; border-spacing:0; }
+.clearfloat { height:0; font-size:1px; clear:both; line-height:0; }
+#container { width:960px; text-align:left; margin:0 auto; height:600px; background:#fffee2; }
+a { color:#333; text-decoration:none; }
+a:hover { color:#ef9b11; text-decoration:underline; }
+.on { background:url(bg02.gif) no-repeat left top; padding-left:4px; width:375px; padding-top:3px; height:57px; display:block; }
+.banner { width:960px; height:473px; margin-top:5px; position:relative; margin:0 auto; }
+.top img { width:960px; height:403px; }
+.banner_tab { padding-left:20px; position:absolute; width:940px; background:url(bg01.jpg) repeat-x; padding-top:5px; height:65px; right: 0px; bottom: 0px; }
+.banner_tab li { float: left; width:300px; }
+.out { background:url(bg03.gif) no-repeat left top; padding-left:3px; width:300px; overflow:hidden; padding-top:3px; height:57px; display:block; }
+banner_tab li a { display:block; width:300px; }
+.banner_tab a p { float:left; padding-top:8px; cursor:pointer; text-decoration:none; display:block; width:90px; margin-left:14px; display:inline; font-size:14px; color:#fff; font-weight:bold; }
+.banner_tab a img { float:left; }
+.hidecontent { display:none; }
+.tab_img { width:152px; height:54px; }
+</style>
+<script type="text/javascript">
+function setTab(/*string*/name,/*int*/ itemCnt,/*int*/ curItem, /**/classHide, /**/classShow)
+{
+	 for(i=1;i<=itemCnt;i++)
+	{
+		eval("document.getElementById('tab_" + name + "_" + i + "').className='" + classHide + "'");
+	} 
+	eval("document.getElementById('tab_" + name + "_" + curItem + "').className='" + classShow + "'");
+ 
+ for(i=1;i<=itemCnt;i++)
+ {
+  eval("ele_hide = document.getElementById('con_" + name + "_" + i +"')");
+  if(ele_hide) ele_hide.style.display = "none";
+ }
+ eval("ele_play = document.getElementById('con_" + name + "_" + curItem + "')");
+ if(ele_play) ele_play.style.display = "block";
+}
+</script>
+</head>
+<body>
+<div class="banner" id="banner">
+  <div class="banner_tab clearfix">
+    <ul>
+      <li id="tab_tophome_1" class="on"> <a href="http://www.mobanwang.com" target="_blank"  onmousemove="startIndex=1;setTab('tophome',3,1,'out','on');"><img src="ad_1s.jpg"  class="tab_img" alt="模板王"/>
+        <p>模板王<br/>
+          设计专家</p>
+        </a> </li>
+      <li id="tab_tophome_2" class="out"><a href="http://www.mobanwang.com" target="_blank" onmousemove="startIndex=2;setTab('tophome',3,2,'out','on');" ><img src="ad_3s.jpg"  class="tab_img" alt="素材资源"/>
+        <p>素材资源</p>
+        </a></li>
+      <li id="tab_tophome_3" class="out"><a href="http://www.mobanwang.com" target="_blank" onmousemove="startIndex=3;setTab('tophome',3,3,'out','on');" ><img src="ad_2s.jpg"  class="tab_img" alt="平面设计"/>
+        <p>平面设计<br/>
+          建设专家</p>
+        </a></li>
+    </ul>
+  </div>
+  <div class="top">
+    <div id="con_tophome_1"><a href="http://www.mobanwang.com" target="_blank" ><img src="ad_1.jpg" alt="网聚重构设计"/></a></div>
+    <div id="con_tophome_2"  class="hidecontent"><a href="/self/self_help.shtml" target="_blank" ><img src="ad_3.jpg" alt="华南宠物网" /></a></div>
+    <div id="con_tophome_3"  class="hidecontent"><a href="showSurvey?survey_id=567" target="_blank" ><img src="ad_2.jpg" alt="简美网络" /></a></div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div style="width:550px;margin:20px auto;">
+<p><strong><a href="http://js.mobanwang.com" target="_blank">模板王整理</a></strong> </p>
+<p></p>
+<p>转载请自觉注明出处！注：此代码仅供学习交流，请勿用于商业用途。</p>
+</div>
+
+
+<script type="text/javascript">
+ var pause = false;
+ var con_num = 3;
+ var startIndex = 1;
+ function setLoop(){
+  try{
+   var oScroll = document.getElementById('banner');
+   oScroll.noWrap = true;
+   oScroll.onmouseover = function(e){pause = true;};
+   oScroll.onmouseout = function(e){pause = false;};
+   setInterval('scrollTopHome()', 3000);
+   }catch(e){alert(e.toString());}
+ }
+ function scrollTopHome(){
+  if(pause) return;
+  startIndex += 1;
+  if(startIndex > con_num){startIndex = 1;}
+  setTab('tophome',3,startIndex,'out','on');
+ } 
+ setLoop();
+</script>
+</body>
+</html>

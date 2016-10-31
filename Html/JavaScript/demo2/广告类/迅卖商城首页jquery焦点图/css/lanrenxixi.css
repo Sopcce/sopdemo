@@ -1,0 +1,63 @@
+boby {
+	line-height: 1.5; font-family: Tahoma, Helvetica, Arial, sans-serif; color: #333333; FONT-SIZE: 12px
+}
+/* 跳转按钮默认显示字体 */
+a {
+	color: #333; text-decoration: none
+}
+/* 跳转鼠标移入的显示下划线 */
+a:hover {
+	text-decoration: underline
+}
+.img { 
+    height:50px; width:200px;
+}
+
+
+.banner
+{
+    position: relative; 
+    width: 960px; 
+    height: 315px;
+	margin:0 auto;
+}
+.jsNav {
+	background: url(../images/jsNav.png) no-repeat 
+}
+.prevBtn {
+	background: url(../images/jsNav.png) no-repeat
+}
+.nextBtn {
+	background: url(../images/jsNav.png) no-repeat
+}
+.imgSelected {
+	background: url(../images/jsNav.png) no-repeat
+}
+.jsNav {
+	position: absolute; 
+    width: 125px; 
+    bottom: 10px; 
+    font-family: Arial, Helvetica, sans-serif; 
+    height: 30px; 
+    right: 10px; 
+    font-weight: bold
+}
+.jsNav A {
+	text-align: center; 
+    line-height: 30px; 
+    width: 25px; 
+    float: left; 
+    vertical-align: middle
+}
+/* 上一个显示 */
+.prevBtn {
+	display: block; background-position: 0px -30px; height: 30px
+}
+/* 下一个 显示*/
+.nextBtn {
+	display: block; background-position: -100px -30px; height: 30px
+}
+/*自动显示当前是字体颜色*/
+.imgSelected {
+	background-position: 1px -60px; color:red;
+}

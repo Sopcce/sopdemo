@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>系统时间</title>
+<script language="javascript" type="text/javascript">
+<!--
+//获得当前时间,刻度为一千分一秒
+var initializationTime=(new Date()).getTime();
+function showLeftTime()
+{
+	var now=new Date();
+	var year=now.getFullYear();
+	var month=now.getMonth();
+	var day=now.getDate();
+	var hours=now.getHours();
+	var minutes=now.getMinutes();
+	var seconds=now.getSeconds();
+document.all.show.innerHTML=""+year+"年"+month+"月"+day+"日 "+hours+":"+minutes+":"+seconds+"";
+//一秒刷新一次显示时间
+var timeID=setTimeout(showLeftTime,1000);
+}
+//-->
+</script>
+</head>
+<body onload="showLeftTime()">
+<label id="show">显示时间的位置</label>
+
+</body>
+</html>

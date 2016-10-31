@@ -1,0 +1,25 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>单选框显示隐藏输入密码</title>
+
+</head>
+ 
+<body>
+ 
+用户：<input type=”text“ value="ting">
+<br />
+密码：<span id="pass">
+           <input type=password id=pw name="pw" value="ting">
+</span>
+<input TYPE="checkbox" id="showPass" onclick="
+var temp=document.getElementById('pw').value;
+if(this.checked){document.getElementById('pass').innerHTML='<input type=text id=pw name=pw>';}
+else{document.getElementById('pass').innerHTML='<input type=password id=pw name=pw>';} 
+document.getElementById('pw').value=temp;
+"
+ 
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+<title>【荐】JS控制文本框中的密码显示/隐藏功能_网页代码站</title>
+<style>
+body,input{font:menu}
+</style>
+</head>
+<body>
+<form name="tijiao" >
+
+<div >
+<span id=box>
+<input type="password" name="password" size="20" value="123456">
+</span>
+<span id=click>
+
+<input type="checkbox" onlick="javascript:ps()" value="显示密码" />
+</span>
+
+</div>
+
+<br /><br /><br /><br />
+
+
+
+<br /><br /><br /><br />
+<script language="JavaScript">
+function ps(){
+if (this.tijiao.password.type="password")
+box.innerHTML="<input type=\"html\" name=\"password\" size=\"20\" value="+this.tijiao.password.value+">";
+click.innerHTML="<a href=\"javascript:txt()\">隐藏密码</a>"}
+function txt(){
+if (this.tijiao.password.type="text")
+box.innerHTML="<input type=\"password\" name=\"password\" size=\"20\" value="+this.tijiao.password.value+">";
+click.innerHTML="<a href=\"javascript:ps()\">显示密码</a>"}
+
+</script>
+
+
+
+
+
+
+</form>
+
+</body>
+</html>
+

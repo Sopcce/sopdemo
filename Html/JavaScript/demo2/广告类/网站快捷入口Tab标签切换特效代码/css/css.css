@@ -1,0 +1,41 @@
+*{ margin:0; padding:0; border:none;}
+body{font:12px/130% verdana,geneva,arial,helvetica,sans-serif,å®‹ä½“; height:100%;}li{list-style:none;}
+html{ height:100%;}
+.clearfix:after{content:" ";display:block;height:0;clear:both;visibility:hidden;}.clearfix{display:inline-block;}
+a:link{ color:#000; text-decoration:none; }
+a:visited{ color:#000; text-decoration:none; }
+a:hover{ color:#000; text-decoration:none; }
+.rrow{width:224px;}
+.login{ background:url(../images/box.png); height:210px;width:224px;  overflow:hidden;}
+.login h2{ color:#fff; font-size:14px; padding:4px 12px; line-height: 30px;height:24px; overflow:hidden; }
+.login h2 span{ font-size:12px; float:right;margin:-31px 23px 0 0;line-height: 32px;font-weight:400; cursor:pointer;}
+.rrow ul{ margin:5px 6px; }
+.rrow ul li {width:216px; height:31px;margin-bottom: 5px; overflow:hidden; float:left;}
+.rrow ul li a,.rrow ul li span{ cursor:pointer; display:block; float:left; margin-right: 4px; background:url(../images/title.gif) 0 -152px; width:69px;padding-left:35px; height:31px;  overflow:hidden; line-height: 32px; font-weight:700;}
+.rrow ul li .lhover{ display:block; float:left; margin-right: 4px; background:url(../images/title.gif) 0 -183px; width:69px;padding-left:35px; height:37px;  overflow:hidden; line-height: 32px; font-weight:700;}
+.rrow ul li .yhzc{ background:url(../images/title.gif) 0 -152px;}
+#yhzc{background:url(../images/title.gif) 0 -183px;height:37px;}
+.rrow ul li .hysj{ background:url(../images/title.gif) -104px -152px; }
+#hysj{ background:url(../images/title.gif) -104px -183px;height:37px;}
+.rrow ul li .fbxx{ background:url(../images/title.gif) 0 -220px; }
+#fbxx{ background:url(../images/title.gif) 0 -251px;height:37px;}
+.rrow ul li .gstg{ background:url(../images/title.gif) -104px -220px; }
+#gstg{ background:url(../images/title.gif) -104px -251px;height:37px;}
+.rrow ul li .xzmj{ background:url(../images/title.gif) 0 -288px; }
+#xzmj{ background:url(../images/title.gif) 0 -319px;height:37px;}
+.rrow ul li .bzzx{ background:url(../images/title.gif) -104px -288px; }
+#bzzx{ background:url(../images/title.gif) -104px -319px;height:37px;}
+.rrow ul .hoverli{background:url(../images/title.gif) 0 -357px;height:92px;  overflow:hidden; line-height: 32px; font-weight:700;}
+.qlogin{height:92px; width:210px; line-height: 32px; margin:5px 0 0 10px; display:none;}
+.qlogin dt{ height:0; overflow:hidden; }
+.qlogin dd{ padding:4px; width:210px; height:22px; text-align:left; float:left;clear:both;overflow:hidden;}
+.qlogin dd .passw,.qlogin a:hover.passw{ margin: -4px 12px 0 0; float:right;}
+.rrow ul li div{ margin-top: 5px; width:210px; display:none;}
+.rrow ul li div a,.rrow ul li div a:hover{background:url(../images/title.gif) -80px -1px; height:20px; line-height: 20px; clear:both; font-weight: 400; width:170px;}
+.rrow ul li div a:hover{ text-decoration:underline; }
+.rrow ul li .block,.rrow .block{ display:block; }
+.rrow ul .none{ display:none; }
+.btn{font-size:12px; font-family:ËÎÌå; float:left; width:57px; height:20px; overflow:hidden; background:url(../images/title.gif); line-height: 21px;padding-left:18px;margin-right: 10px; }
+a:hover.btn{background:url(../images/title.gif) 0 -20px;}
+#btn4{background:url(../images/title.gif);width:75px; margin-left: 48px; cursor:pointer;}
+.input2{font-size:12px; border:1px solid #999; width:140px; height:16px; padding:1px 2px 0 2px; }

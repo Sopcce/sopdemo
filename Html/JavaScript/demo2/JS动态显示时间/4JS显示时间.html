@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>JS显示当前时间三种显示方式</title>
+
+
+</head>
+<body>
+<script language=JavaScript>
+<!--
+var enabled = 0; today = new Date();
+var day; var date;
+if(today.getDay()==0) day = " 星期日"
+if(today.getDay()==1) day = " 星期一"
+if(today.getDay()==2) day = " 星期二"
+if(today.getDay()==3) day = " 星期三"
+if(today.getDay()==4) day = " 星期四"
+if(today.getDay()==5) day = " 星期五"
+if(today.getDay()==6) day = " 星期六"
+document.fgColor = "000000";
+date = "今天是：" + (today.getYear()) + "年" + (today.getMonth() + 1 ) + "月" + today.getDate() + "日" + day +"";
+document.write(date);
+// -->
+</script>
+<hr>
+<div id="webjx"></div>
+<hr>
+<script>setInterval("webjx.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+   </script>
+
+<span id=nowDate></span>
+<span id=nowTime></span>
+<script><!--
+var ns4up1 = (document.layers) ? 1 : 0;  // browser sniffer
+
+var ie4up1 = (document.all&&(navigator.appVersion.indexOf("MSIE 4") == -1)) ? 1 : 0;
+
+var ns6up1 = (document.getElementById&&!document.all) ? 1 : 0;
+
+function nowclock() {
+if (!ns4up1 && !ie4up1 && !ns6up1) return false;
+var digital = new Date();
+var hours = digital.getHours();
+var minutes = digital.getMinutes();
+var seconds = digital.getSeconds();
+var day = digital.getDate();
+var month = digital.getMonth() + 1;
+var year = digital.getYear();
+var amOrPm = "AM";
+if (hours > 11) amOrPm = "PM";
+if (hours > 12) hours = hours - 12;
+if (hours == 0) hours = 12;
+if (minutes < 10) minutes = "0" + minutes;
+if (seconds < 10) seconds = "0" + seconds;
+if (day < 10) day = "0" + day;
+if (month < 10) month = "0" + month;
+dispTime = hours + ":" + minutes + ":" + seconds + " " + amOrPm;
+dispDate = year + "年" + month + "月" + day+ "日, " ;
+if (ns4up1) {
+document.layers.nowTime.document.write(dispTime);
+document.layers.nowTime.document.close();
+document.layers.nowDate.document.write(dispDate);
+document.layers.nowDate.document.close();
+} else if (ns6up1){
+document.getElementById("nowTime").innerHTML = dispTime;
+document.getElementById("nowDate").innerHTML = dispDate;
+} else if (ie4up1){
+nowTime.innerHTML = dispTime;
+nowDate.innerHTML = dispDate;
+} setTimeout("nowclock()", 1000);
+} nowclock();
+//-->
+	</script>
+
+
+</div>
+</body>
+</html>
