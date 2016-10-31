@@ -1,0 +1,28 @@
+@charset "utf-8";
+.loading{background:url(../images/fcbg.png);width:320px;height:500px;margin:auto;position:relative;margin-top:200px;z-index:2}
+.pic{
+	background:url(../images/fc.png);position:absolute;z-index:1;right:60px;width:427px;height:430px;top:-170px;
+	-webkit-animation:load 2s linear 1s infinite;
+	-moz-animation:load 2s linear 1s infinite;
+	-ms-animation:load 2s linear 1s infinite;
+	-o-animation:load 2s linear 1s infinite;
+	animation:load 2s linear 1s infinite;
+}
+.fcc{background:url(../images/fcc.png);position:absolute;z-index:3;right:230px;width:90px;height:97px;top:0}
+
+@-webkit-keyframes load{ 
+	0%{
+		transform: rotate(0);
+		-ms-transform: rotate(0);		/* IE 9 */
+		-webkit-transform: rotate(0);	/* Safari and Chrome */
+		-o-transform: rotate(0);		/* Opera */
+		-moz-transform: rotate(0);		/* Firefox */
+	}
+	100%{
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);		/* IE 9 */
+		-webkit-transform: rotate(360deg);	/* Safari and Chrome */
+		-o-transform: rotate(360deg);		/* Opera */
+		-moz-transform: rotate(360deg);		/* Firefox */
+	}
+}
