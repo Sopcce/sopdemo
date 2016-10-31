@@ -1,0 +1,208 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View1</title>
+</head>
+<body>
+    <div>
+       <!-- 收藏1号-->
+        <script type="text/javascript">
+            function addBookmark() {
+                var ctrl = (navigator.userAgent.toLowerCase()).indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL';
+                try {
+                    if (document.all) { //IE类浏览器
+                        try {
+                            window.external.toString(); //360浏览器不支持window.external，无法收藏
+                            window.alert("国内开发的360浏览器等不支持主动加入收藏。\n您可以尝试通过浏览器菜单栏 或快捷键 ctrl+D 试试。");
+                        }
+                        catch (e) {
+                            try {
+                                window.external.addFavorite(window.location, document.title);
+                            }
+                            catch (e) {
+                                window.external.addToFavoritesBar(window.location, document.title);  //IE8
+                            }
+                        }
+                    }
+                    else if (window.sidebar) { //firfox等浏览器
+                        window.sidebar.addPanel(document.title, window.location, "");
+                    }
+                    else {
+                        alert('您可以尝试通过快捷键' + ctrl + ' + D 加入到收藏夹~');
+                    }
+                }
+                catch (e) {
+                    window.alert("因为IE浏览器存在bug，添加收藏失败！\n解决办法：在注册表中查找\n HKEY_CLASSES_ROOT\\TypeLib\\{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}\\1.1\\0\\win32 \n将 C:\\WINDOWS\\system32\\shdocvw.dll 改为 C:\\WINDOWS\\system32\\ieframe.dll ");
+                }
+            }
+        </script>
+
+        <a href="javascript:addBookmark()">添加收藏</a>
+
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br />
+        <!-- 收藏2号-->
+        <div>
+ 
+<a href="/">首页</a> | 
+            <a onclick="SetHome(window.location)" href="javascript:void(0)">设为首页</a>
+ 
+            | <a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a>
+ 
+      </div>
+ 
+       <script type="text/javascript" language="javascript">
+
+           //加入收藏
+
+           function AddFavorite(sURL, sTitle) {
+
+               sURL = encodeURI(sURL);
+               try {
+
+                   window.external.addFavorite(sURL, sTitle);
+
+               } catch (e) {
+
+                   try {
+
+                       window.sidebar.addPanel(sTitle, sURL, "");
+
+                   } catch (e) {
+
+                       alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+
+                   }
+
+               }
+
+           }
+
+           //设为首页
+
+           function SetHome(url) {
+
+               if (document.all) {
+
+                   document.body.style.behavior = 'url(#default#homepage)';
+
+                   document.body.setHomePage(url);
+
+               } else {
+
+                   alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");
+
+               }
+
+           }
+
+</script>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+         <!-- 收藏3号-->
+<script type="text/javascript">
+
+function AddFavorite(sURL, sTitle)
+{
+    try
+    {
+        window.external.addFavorite(sURL, sTitle);
+    }
+    catch (e)
+    {
+        try
+        {
+            window.sidebar.addPanel(sTitle, sURL, "");
+        }
+        catch (e)
+        {
+            alert("加入收藏失败，请使用Ctrl+D进行添加");
+        }
+    }
+}
+
+</script>
+
+        <a  href="#"    onclick="AddFavorite(window.location,document.title)"  >收藏本站</a>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <!-- 收藏4号-->
+        <script type="text/javascript">
+function addFavorite2() {
+    var url = window.location;
+    var title = document.title;
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf("360se") > -1) {
+        alert("由于360浏览器功能限制，请按 Ctrl+D 手动收藏！");
+    }
+    else if (ua.indexOf("msie 8") > -1) {
+        window.external.AddToFavoritesBar(url, title); //IE8
+    }
+    else if (document.all) {
+    try{
+        window.external.addFavorite(url, title);
+    }catch(e){
+    alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
+  }
+    }
+    else if (window.sidebar) {
+        window.sidebar.addPanel(title, url, "");
+    }
+    else {
+  alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
+    }
+}
+</script>
+
+        <a href=# onclick="javascript:addFavorite2()">加入收藏</a>
+
+         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <!-- 收藏5号-->
+
+
+        <script type="text/javascript">
+            function addFavorite() {
+                var aUrls = document.URL.split("/");
+                var vDomainName = "http://" + aUrls[2] + "/";
+                var description = document.title;
+                try {
+                    window.external.AddFavorite(vDomainName, document.title);
+                } catch (e) {
+                    window.sidebar.addPanel(document.title, vDomainName, "");
+                }
+            }
+</script>
+
+        <input type="button" value="加入收藏" onclick="addFavorite();" />
+
+
+       
+        -------------------------------------------------------------------
+        <script>
+            function addfavorite() {
+                if (document.all) {
+                    window.external.addFavorite('http://www.baidu.com', '名字');
+                }
+                else if (window.sidebar) {
+                    window.sidebar.addPanel('名字', 'www.baidu.com', "");
+                }
+            }
+</script> 
+<a href="#" onclick="addfavorite()">加入收藏</a>
+
+
+
+
+
+
+        <a href="www.baiducom/" onclick="window.external.addFavorite(this.href,this.title);return false;" title='名字' rel="sidebar">加入收藏</a>
+    </div>
+</body>
+</html>
