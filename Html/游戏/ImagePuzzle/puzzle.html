@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>突破游戏</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/image-puzzle.css" rel="stylesheet" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/image-puzzle.js"></script>
+</head>
+<body>
+    <div id="collage">
+        <h2>哈哈哈</h2>
+        <hr />
+        <div id="playPanel" style="padding:5px;display:none;">
+            <h3 id="imgTitle"></h3> <hr />
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>Steps:</div><div class="stepCount">0</div>
+                    </div>
+                    <img id="actualImage" />
+                    <div>重新创建一个和左边一样的照片。</div>
+                    <br />
+                    <div>
+                        <button id="btnRule" type="button" class="btn" onclick="rules();">规则</button>
+                        <button id="newPhoto" type="button" class="btn">换图</button>
+                        <button id="btnReplay" type="button" class="btn" onclick="about();">关于</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">Game Over!!</h2>
+                祝贺你!! <br /> 您已经完成了这张照片
+                <br />
+                用了<span class="stepCount">0</span> 次.
+                <br /><br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">再玩</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var images = [
+                { src: 'images/london-bridge.jpg', title: 'London Bridge' },
+                { src: 'images/lotus-temple.jpg', title: 'Lotus Temple' },
+                { src: 'images/qutub-minar.jpg', title: 'Qutub Minar' },
+                { src: 'images/statue-of-liberty.jpg', title: 'Statue Of Liberty' },
+                { src: 'images/taj-mahal.jpg', title: 'Taj Mahal' }
+            ];
+
+            $(function () {
+                imagePuzzle.startGame(images);
+                $('#newPhoto').click(function () {
+                    imagePuzzle.startGame(images);
+                });
+            });
+            function rules() {
+                alert('再保险安排的图像部分,它正确的形式。\ nThe没有。采取将统计。.');
+            }
+            function about() {
+                alert('哈哈，好玩吧');
+            }
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-size:12px;
+}
+h1 {
+	line-height:400%;
+	text-align:center;
+	font-size:30px;
+}
+#main {
+	width:324px;
+	margin:10px auto;
+	border:1px solid #E1ECFE;
+}
+#main h2 {
+	padding:4px 0;
+	text-indent:12px;
+	color:#666;
+	background:#E1ECFE;
+}
+#main p {
+	display:block;
+	width:244px;
+	height:117px;
+	margin:10px 40px;
+}
+#main p span img {
+	position:absolute;
+	left:51px;
+	top:51px;
+	width:14px;
+	height:14px;
+}
+span#eyeLeft,span#eyeRight {
+	display:block;
+	position:relative;
+	width:116px;
+	height:116px;
+	float:left;
+	background:url("../images/eye-r.gif") no-repeat center;
+}
+span#eyeRight {
+	background-image:url("../images/eye-y.gif");
+}
+
+span#eyeLeft #pupilLeft {
+}
