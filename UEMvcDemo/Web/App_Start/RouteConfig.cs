@@ -13,7 +13,14 @@ namespace Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.Add(new Route("SopHandler/{controller}", new Sop.UEditor.UERouteHandlerHelper()));
+          
+            //编辑器使用 
+            routes.MapRoute(
+                "Sop_Handler", // Route name
+                "SopHandler/{action}/{id}", // URL with parameters
+                new { controller = "SopHandler", action = "Handler", id = UrlParameter.Optional }
+            ).RouteHandler = new Sop.Core.Handler.UERouteHandler();
+
 
             routes.MapRoute(
                 name: "Default",
