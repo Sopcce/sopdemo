@@ -1,2 +1,6 @@
 /.vs
 /packages
+/UEditor/obj
+/UEditor/Web.Debug.config
+/UEditor/Web.Release.config
+/UEditor/bin
