@@ -1,0 +1,17 @@
+﻿@model Web.Models.UeditorAttachmentInfo
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>UE使用MVC 中的HtmlHelper输出编辑器 </title>
+</head>
+<body>
+
+    <br /><br /><br />
+    @Html.UEditor("name")
+   <br /><br /><br />
+    @Html.UEditorFor(n => n.UploadFileName)
+</body>
+</html>
